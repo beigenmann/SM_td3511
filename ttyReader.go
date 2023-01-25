@@ -124,6 +124,9 @@ func grep(line string) {
 		value = r[0]
 		m["unit"] = r[1]
 	}
+	if value == "0.000" {
+		return
+	}
 	m["value"] = value
 	if len(v) > 2 {
 		vl = strings.Split(v[2], ")")
