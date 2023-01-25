@@ -151,6 +151,7 @@ func grep(line string) {
 	if err != nil {
 		fmt.Printf("Error: %s", err.Error())
 	} else {
+		log.Println(jsonStr)
 		fmt.Println(string(jsonStr))
 	}
 
