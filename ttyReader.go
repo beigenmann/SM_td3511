@@ -101,6 +101,9 @@ func read(s *serial.Port) {
 		line = strings.Replace(line, "\n", "", -1)
 		line = strings.TrimSpace(line)
 		log.Println(line)
+		if strings.ContainsAny("line", "!") {
+			break
+		}
 		grep(line)
 	}
 }
