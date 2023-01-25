@@ -76,11 +76,8 @@ func main() {
 		log.Println("Could not open port.")
 		log.Fatal(err)
 	}
-
 	initLogger()
-	for {
-		read(s)
-	}
+	read(s)
 }
 
 func initLogger() {
@@ -141,7 +138,7 @@ func grep(line string) {
 
 	} else {
 		t := time.Now()
-		m["time"] = t.Format(time.RFC3339Nano)
+		m["time_now"] = t.Format(time.RFC3339Nano)
 	}
 
 	jsonStr, err := json.Marshal(m)
